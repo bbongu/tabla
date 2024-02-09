@@ -8,14 +8,17 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Setter
+
 @ToString
 public class BoardListDto {
     private Long boardId;
     private String title;
     private String userName;
-    @JsonFormat(pattern="yyyy-mm-dd")
+
+    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDateTime createDate;
-    @JsonFormat(pattern="yyyy-mm-dd")
+
+    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDateTime updateDate;
 
     @Builder

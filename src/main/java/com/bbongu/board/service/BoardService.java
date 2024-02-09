@@ -10,12 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class BoardService {
-
     public List<BoardListDto> getBoardList() {
+
        List<BoardListDto> boardListDtos = new ArrayList<>();
+       Long id = 0L;
+
        boardListDtos.add(BoardListDto.builder()
+               .boardId(id)
                .title("temp")
                .userName("bbongu")
                .createDate(LocalDateTime.now())
