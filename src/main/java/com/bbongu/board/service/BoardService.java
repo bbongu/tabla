@@ -1,18 +1,17 @@
 package com.bbongu.board.service;
 
+import com.bbongu.board.dto.BoardDto;
 import com.bbongu.board.dto.BoardListDto;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.Pageable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class BoardService {
-    public List<BoardListDto> getBoardList() {
 
+    public List<BoardListDto> getBoardList() {
        List<BoardListDto> boardListDtos = new ArrayList<>();
        Long id = 0L;
 
@@ -24,5 +23,35 @@ public class BoardService {
                .updateDate(LocalDateTime.now())
                .build());
        return boardListDtos;
+    }
+
+    public BoardDto getArticleByBoardId(Long boardId) {
+       // BoardDto boardDto = new BoardDto();
+
+//        BoardDto boardDto = BoardDto.builder()
+//                .boardId(boardId)
+//                .title("하하")
+//                .userName("봉구")
+//                .createDate((LocalDateTime.now()))
+//                .updateDate(LocalDateTime.now())
+//                .build();
+//
+//        return boardDto;
+
+        return BoardDto.builder()
+                .boardId(boardId)
+                .title("하하")
+                .userName("봉구")
+                .createDate((LocalDateTime.now()))
+                .updateDate(LocalDateTime.now())
+                .build();
+    }
+
+    public BoardDto saveArticle(BoardDto boardDto) {
+        //Long boardId = 0L;
+
+
+
+        return boardDto;
     }
 }
